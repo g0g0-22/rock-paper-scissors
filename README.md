@@ -1,1 +1,1 @@
-# rock-paper-scissors
+This is a simple rock, paper, scissors game coded in JavaScript. 
