@@ -60,7 +60,7 @@ const computerScoreDisplay = document.getElementById('computerScoreDisplay');
 
 buttonContainer.addEventListener('click', function(event){
 
-    if(event.target.tagName === 'BUTTON'){
+    if(event.target.tagName === 'IMG'){
         const userChoice = event.target.id;
     
     const computerChoice = getComputerChoice();
@@ -68,6 +68,7 @@ buttonContainer.addEventListener('click', function(event){
     userScoreDisplay.textContent = userScore;
     computerScoreDisplay.textContent = computerScore;
     }
+    console.log(event.target);
 });
 
 const resetButton = document.getElementById('reset');
