@@ -1,3 +1,7 @@
+
+let userScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
     switch(randomNumber) {
@@ -9,15 +13,6 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-function getUserChoice(){
-    let userInput = prompt('rock, paper, or scissors?');
-    userInput = userInput.toLowerCase();
-    return userInput;
-}
-
-
-let userScore = 0;
-let computerScore = 0;
 
 function playRound(userChoice, computerChoice){
     if(userChoice === computerChoice){
@@ -57,16 +52,28 @@ function playRound(userChoice, computerChoice){
         console.log('Invalid input');
     }
 }
-for(let i = 0; i < 5; i++){
-    const userChoice = getUserChoice();
+
+
+const buttonContainer = document.getElementById('buttonContainer');
+const userScoreDisplay = document.getElementById('userScoreDisplay');
+const computerScoreDisplay = document.getElementById('computerScoreDisplay');
+
+buttonContainer.addEventListener('click', function(event){
+
+    if(event.target.tagName === 'BUTTON'){
+        const userChoice = event.target.id;
+    
     const computerChoice = getComputerChoice();
     playRound(userChoice, computerChoice);  
-    console.log('Round ' + (i + 1));
-    console.log('User Score: ' + userScore);
-    console.log('Computer Score: ' + computerScore);
-    console.log(' ');
-}
-console.log('Final Score:');
-console.log('User Score: ' + userScore);
-console.log('Computer Score: ' + computerScore);
+    userScoreDisplay.textContent = userScore;
+    computerScoreDisplay.textContent = computerScore;
+    }
+});
 
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function(){
+    userScore=0;
+    computerScore=0;
+    userScoreDisplay.textContent = userScore;
+    computerScoreDisplay.textContent = computerScore;
+})
