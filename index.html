@@ -9,23 +9,25 @@
 </head>
 <body>
     <div id="header">
-        <ul>
-            <li>Rock</li>
-            <li>Paper</li>
-            <li>Scissors</li>
-        </ul>
-        <div id="scores">
-            <div>User Score: <span id="userScoreDisplay">0</span></div>
-            <div>Computer Score: <span id="computerScoreDisplay">0</span></div>
-        </div>
-
+        <h1>Rock, Paper, Scissors</h1>
     </div>
 
     <div id="buttonContainer">
-        <button><img src="images/rock.png" alt="rockImage" id="rock"></button>
-        <button><img src="images/paper.png" alt="paperImage" id="paper"></button>
-        <button><img src="images/scissors.png" alt="scissorsImage" id="scissors"></button>
+        <div id="topButtons">
+            <img src="images/rock.png" alt="rockImage" id="rock">
+            <img src="images/paper.png" alt="paperImage" id="paper">
+        </div>
+        <img src="images/scissors.png" alt="scissorsImage" id="scissors">
     </div>
-    <button id="reset">Reset Score</button>
+
+    <div id="computerChoiceDisplay"></div>
+    <div id="footer">
+        <div id="scores">
+            <div id="userScore">User: <span id="userScoreDisplay">0</span></div>
+            <div id="computerScore">Computer: <span id="computerScoreDisplay">0</span></div>
+        </div>
+        <div id="buttonContainer"><button id="reset">Reset Score</button></div>
+
+    </div>
 </body>
 </html>

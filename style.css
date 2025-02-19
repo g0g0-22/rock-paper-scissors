@@ -1,13 +1,104 @@
-ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', 'Arial';
+    background-color: rgb(54,69,79);
 }
 
 #scores {
-    font-family: Arial, sans-serif;
     font-size: 18px;
+    font-weight: 600;
     display: flex;
     flex-direction: column; /* Stack children vertically */
     gap: 10px; /* Add spacing between the scores */
+}
+#header{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 0;
+    border-width: 5px;
+    color: white;
+}
+h1{
+    font-size: 45px;
+    margin:0;
+    padding: 20px 10px;
+}
+#scoresTable{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#reset{
+    border-style:solid;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    color:white;
+    transition: transform 0.2s ease;
+}
+#reset:hover{
+    transform:scale(1.05);
+}
+
+img{
+    height: 250px;
+    width: 250px;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+#topButtons{
+    margin:0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+#buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
+#computerChoiceDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    height: 100px; 
+}
+#computerChoiceDisplay img{
+    width: 100px;
+    height: 100px;
+}
+#scores div{
+    background-color: white;
+    width: 100px;
+    padding: 10px;
+    border-radius: 8px;
+}
+#footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+}
+#userScore{
+    color: blue;
+}
+#computerScore{
+    color: red;
+}

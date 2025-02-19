@@ -1,4 +1,9 @@
 
+const computerChoiceDisplay = document.getElementById('computerChoiceDisplay');
+const rockImageHTML = '<img src="images/rock.png">'
+const paperImageHTML = '<img src="images/paper.png">'
+const scissorsImageHTML = '<img src="images/scissors.png">'
+
 let userScore = 0;
 let computerScore = 0;
 
@@ -15,42 +20,56 @@ function getComputerChoice() {
 }
 
 function playRound(userChoice, computerChoice){
-    if(userChoice === computerChoice){
-        console.log('It\'s a tie!');
-    }
+    computerChoiceDisplay.innerHTML = '';
+    let computerChoiceImage;
+    let winner;
+    if(computerChoice ==='rock')
+        computerChoiceImage = rockImageHTML;
+    else if(computerChoice === 'paper')
+        computerChoiceImage = paperImageHTML;
+    else
+        computerChoiceImage = scissorsImageHTML;
+
+
+    if(userChoice === computerChoice)
+        winner = 'It\'s a tie!';
+        
     else if(userChoice === 'rock'){
         if(computerChoice === 'paper'){
-            console.log('Computer wins!');
+            winner = 'Computer wins!';
             computerScore++;
+            
         }
         else{
-            console.log('You win!');
+            winner = 'You win!';
             userScore++;
         }
     }
     else if(userChoice === 'paper'){
         if(computerChoice === 'scissors'){
-            console.log('Computer wins!');
+            winner = 'Computer wins!';
             computerScore++;
         }
         else{
-            console.log('You win!');
+            winner = 'You win!';
             userScore++;
         }
     }
     else if(userChoice === 'scissors'){
         if(computerChoice === 'rock'){
-            console.log('Computer wins!');
+            winner = 'Computer wins!';
             computerScore++;
         }
         else{
-            console.log('You win!');
+            winner = 'You win!';
             userScore++;
         }
     }
     else{
         console.log('Invalid input');
     }
+    computerChoiceDisplay.innerHTML = `${winner} The computer chose:    `;
+    computerChoiceDisplay.innerHTML += computerChoiceImage;
 }
 
 
@@ -77,4 +96,5 @@ resetButton.addEventListener('click', function(){
     computerScore=0;
     userScoreDisplay.textContent = userScore;
     computerScoreDisplay.textContent = computerScore;
-})
+    computerChoiceDisplay.innerHTML = '';
+});
